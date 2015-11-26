@@ -1,7 +1,4 @@
-FactoryGirl.define do  factory :course do
-    
-  end
-
+FactoryGirl.define do
 
   # use Ken's answers from Q&A
   factory :user do
@@ -10,6 +7,13 @@ FactoryGirl.define do  factory :course do
     end
     password "cantflybutwaddle"
     password_confirmation "cantflybutwaddle"
+  end
+
+  factory :course do
+    title "somecourse"
+    description "somedescription"
+    cost(1.0)
+    association :user
   end
 
 end
