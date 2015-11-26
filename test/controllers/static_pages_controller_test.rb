@@ -9,9 +9,4 @@ class StaticPagesControllerTest < ActionController::TestCase
     get :index
     assert_response :success
   end
-
-  test "create" do
-    user = FactoryGirl.create(:user)
-    sign_in user
-  end
 end
