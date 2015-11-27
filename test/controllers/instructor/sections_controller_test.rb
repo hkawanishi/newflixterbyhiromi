@@ -15,7 +15,7 @@ class Instructor::SectionsControllerTest < ActionController::TestCase
   test "section create found" do
     user = FactoryGirl.create(:user)
     sign_in user
-    course = FactoryGirl.create(:course)
+    course = FactoryGirl.create(:course, :user => user)
     assert_difference 'Section.count' do
       post :create, :course_id => course.id, :section => {
         :title => 'sometitle'

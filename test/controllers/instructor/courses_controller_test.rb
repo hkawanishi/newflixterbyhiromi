@@ -15,7 +15,7 @@ class Instructor::CoursesControllerTest < ActionController::TestCase
   test "show found" do
     user = FactoryGirl.create(:user)
     sign_in user
-    course = FactoryGirl.create(:course)
+    course = FactoryGirl.create(:course, :user => user)
     get :show, :id => course.id
     assert_response :success
   end
