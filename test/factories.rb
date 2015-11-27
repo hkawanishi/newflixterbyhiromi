@@ -1,4 +1,7 @@
-FactoryGirl.define do
+FactoryGirl.define do  factory :section do
+    
+  end
+
 
   # use Ken's answers from Q&A
   factory :user do
