@@ -2,15 +2,6 @@ require 'test_helper'
 
 class Instructor::LessonsControllerTest < ActionController::TestCase
 
-  # test "lesson new found" do
-  #   user = FactoryGirl.create(:user)
-  #   sign_in user
-  #   course = FactoryGirl.create(:course, :user => user)
-  #   section = FactoryGirl.create(:section, :course => course)
-  #   get :new, :section_id => section.id
-  #   assert_response :success
-  # end
-
   test "lesson create found" do
     user = FactoryGirl.create(:user)
     sign_in user
@@ -18,7 +9,7 @@ class Instructor::LessonsControllerTest < ActionController::TestCase
     section = FactoryGirl.create(:section, :course => course)
     assert_difference 'Lesson.count' do
       post :create, :section_id => section.id, :lesson => {
-        :title => 'sometitle'
+        :title => 'sometitle', :subtitle => 'somesubtitle'
       }
 
     end
