@@ -9,12 +9,16 @@
     </h2>
      <%= image_tag course.image, :class => 'img-responsive' %>
     <br />
-    <div class="col-sm-8 col-xs-12">
+    <!--div class="col-sm-8 col-xs-12"-->
+    <div class="col-sm-2"></div>
+      <div class="col-sm-6">
       <%= course.description %>
-    </div>
+      </div class="col-sm-6">
     <div class="col-sm-4 col-xs-12 text-center">
       <%= link_to 'More Details...', course_path(course), :class => 'btn btn-primary btn-large' %>
     </div>
+    <br />
     <br class="clr" />
+    <br />
   <% end %>
 </div>
