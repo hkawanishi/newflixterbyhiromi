@@ -4,11 +4,13 @@ class SectionTest < ActiveSupport::TestCase
   # test "the truth" do
   #   assert true
   # end
-  # end
-  test "title should be present" do
-    section = FactoryGirl.create(:section)
-    section.title = " "
-    assert_not section.valid?
+
+  def setup
+    @section = FactoryGirl.create(:section)
+  end
+
+  test "section title should be present" do
+    assert_attribute_is_validated(@section, :title, " ", 1)
   end
 
 end

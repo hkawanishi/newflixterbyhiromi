@@ -8,21 +8,19 @@ class LessonTest < ActiveSupport::TestCase
     @lesson = FactoryGirl.create(:lesson)
   end
 
-  def assert_attribute_is_validated(model, attribute, value, flag)
-    model.assign_attributes(attribute => value)
-    if flag == 1
-      assert_not model.valid?
-    else
-      assert model.valid?
-    end
-  end
-
   test "lesson title should be present" do
     assert_attribute_is_validated(@lesson, :title, " ", 1)
   end
 
   test "lesson subtitle should be present" do
     assert_attribute_is_validated(@lesson, :subtitle, " ", 1)
+  end
+
+  test "next lesson should work" do
+    lesson = FactoryGirl.create(:lesson)
+    lesson = FactoryGirl.create(:lesson)
+    puts "lesson1 is #{lesson1.row_order}"
+    assert true
   end
 
 

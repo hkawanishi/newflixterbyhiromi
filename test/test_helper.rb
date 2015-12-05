@@ -12,6 +12,15 @@ class ActiveSupport::TestCase
   #fixtures :all
 
   # Add more helper methods to be used by all tests here...
+  def assert_attribute_is_validated(model, attribute, value, flag)
+    model.assign_attributes(attribute => value)
+    if flag == 1
+      assert_not model.valid?
+    else
+      assert model.valid?
+    end
+  end
+
 end
 
 class ActionController::TestCase
