@@ -4,16 +4,25 @@ class LessonTest < ActiveSupport::TestCase
   # test "the truth" do
   #   assert true
   # end
-  test "title should be present" do
-    lesson = FactoryGirl.create(:lesson)
-    lesson.title = " "
-    assert_not lesson.valid?
+  def setup
+    @lesson = FactoryGirl.create(:lesson)
   end
 
-  test "subtitle should be present" do
-    lesson = FactoryGirl.create(:lesson)
-    lesson.subtitle = " "
-    assert_not lesson.valid?
+  def assert_attribute_is_validated(model, attribute, value, flag)
+    model.assign_attributes(attribute => value)
+    if flag == 1
+      assert_not model.valid?
+    else
+      assert model.valid?
+    end
+  end
+
+  test "lesson title should be present" do
+    assert_attribute_is_validated(@lesson, :title, " ", 1)
+  end
+
+  test "lesson subtitle should be present" do
+    assert_attribute_is_validated(@lesson, :subtitle, " ", 1)
   end
 
 
