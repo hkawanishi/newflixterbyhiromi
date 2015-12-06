@@ -59,6 +59,8 @@ gem 'ranked-model'
 
 gem 'jquery-ui-rails'
 
+gem 'capybara'
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.1.2'
 

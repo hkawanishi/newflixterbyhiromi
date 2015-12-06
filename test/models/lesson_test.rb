@@ -16,12 +16,4 @@ class LessonTest < ActiveSupport::TestCase
     assert_attribute_is_validated(@lesson, :subtitle, " ", 1)
   end
 
-  test "next lesson should work" do
-    lesson = FactoryGirl.create(:lesson)
-    lesson = FactoryGirl.create(:lesson)
-    puts "lesson1 is #{lesson1.row_order}"
-    assert true
-  end
-
-
 end
