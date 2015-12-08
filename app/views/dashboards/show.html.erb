@@ -1,9 +1,8 @@
 <br />
   <div class="col-xs-4">
-    <%= image_tag 'Username.png' %>
+    <%= image_tag 'Username.png', :class => 'img_responsive'%>
   </div>
-  <div class="clr"></div>
-  <div class="col-xs-8">
+  <div class="col-xs-10 col-xs-offset-1">
     <h3><%= current_user.email %></h3>
     <h4>Member Since: <%=current_user.created_at.strftime("%B %d, %Y")  %></h4>
   </div>

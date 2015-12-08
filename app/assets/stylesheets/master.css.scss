@@ -69,7 +69,8 @@ body {
 .lesson {
   background-color:black;
   margin-top:10px;
-  height:130px;
+  height:50%;
+  padding-bottom:15px;
 }
 .lesson a {
   color: white;
@@ -88,6 +89,7 @@ body {
 }
 ul {
   list-style-type: none;
+  padding-left: 0px;
 }
 .section-li {
   border: 1px solid;
